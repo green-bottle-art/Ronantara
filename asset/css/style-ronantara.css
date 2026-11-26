@@ -1,0 +1,655 @@
+/* =========================================
+   RONANTARA NEW COLOR THEME
+   Cream • Charcoal • Terracotta
+========================================= */
+
+:root{
+    --cream:#EADED8;
+    --charcoal:#2A2A2A;
+    --terracotta:#A47551;
+
+    --bg:#F7F3EF;
+    --white:#FFFFFF;
+    --border:#D8CCC4;
+    --text:#5E5A56;
+
+    --radius:12px;
+    --transition:.3s ease;
+}
+
+/* ===========================
+   BODY
+=========================== */
+
+body{
+    background:var(--bg);
+    color:var(--charcoal);
+    font-family:"Poppins",sans-serif;
+}
+.badge-seniman {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    border: 1px solid #c98a5e;
+    color: #c98a5e;
+    font-size: 0.85rem;
+    background-color: transparent;
+}
+/* ===========================
+   HEADER
+=========================== */
+
+.header{
+    background:rgba(234,222,216,.95);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+}
+
+.navbar{
+    background:transparent !important;
+    border-bottom:none;
+}
+
+.navbar::before{
+    color:var(--charcoal);
+    font-weight:700;
+    letter-spacing:3px;
+}
+
+.nav-links a{
+    color:var(--charcoal);
+    border-radius:25px;
+    transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    background:var(--terracotta);
+    color:#fff;
+}
+
+/* ===========================
+   SEARCH BAR
+=========================== */
+
+.search-bar{
+    background:#fff;
+    border:1px solid var(--border);
+    color:var(--charcoal);
+    border-radius:30px;
+}
+
+.search-bar:focus{
+    border-color:var(--terracotta);
+    box-shadow:0 0 0 4px rgba(164,117,81,.15);
+}
+
+/* ===========================
+   CATEGORY BUTTON
+=========================== */
+
+.cat-btn{
+    background:transparent;
+    color:var(--charcoal);
+    border:1px solid var(--terracotta);
+    border-radius:30px;
+    transition:.3s;
+}
+
+.cat-btn:hover,
+.cat-btn.active{
+    background:var(--terracotta);
+    color:#fff;
+}
+
+/* ===========================
+   SECTION TITLE
+=========================== */
+
+.section-title{
+    color:var(--charcoal);
+    border-bottom:3px solid var(--terracotta);
+    padding-bottom:6px;
+}
+
+/* ===========================
+   GALLERY CARD
+=========================== */
+
+.gallery-item{
+    background:#fff;
+    border:none;
+    border-radius:18px;
+    overflow:hidden;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.08);
+
+    transition:.35s;
+}
+
+.gallery-item:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 20px 45px rgba(164,117,81,.20);
+
+}
+
+.gallery-thumb{
+    overflow:hidden;
+}
+
+.gallery-thumb img{
+
+    transition:.5s;
+
+}
+
+.gallery-item:hover .gallery-thumb img{
+
+    transform:scale(1.05);
+
+}
+
+/* ===========================
+   GALLERY INFO
+=========================== */
+
+.galery-info{
+    background:#fff;
+    padding:14px;
+}
+
+.galery-info h3{
+    color:var(--charcoal);
+    font-weight:700;
+}
+
+.galery-info p{
+    color:var(--text);
+}
+
+/* ===========================
+   ACTION BUTTON
+=========================== */
+
+.gallery-actions{
+    border-top:1px solid var(--border);
+    padding:10px 14px;
+}
+
+.action-btn{
+    color:var(--charcoal);
+    transition:.3s;
+}
+
+.action-btn:hover{
+    color:var(--terracotta);
+}
+
+.btn-load-more {
+    padding: 10px 32px;
+    border: none;
+    border-radius: 25px;
+    background-color: #6f4e37;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+/* ===========================
+   BUTTON
+=========================== */
+
+.btn,
+.btn-outline,
+.btn-outline-secondary,
+.btn-light{
+
+    border-radius:30px !important;
+
+    transition:.3s;
+
+}
+
+.btn-outline,
+.btn-outline-secondary{
+
+    border:1px solid var(--terracotta);
+
+    color:var(--terracotta);
+
+    background:#fff;
+
+}
+
+.btn-outline:hover,
+.btn-outline-secondary:hover{
+
+    background:var(--terracotta);
+
+    color:#fff;
+
+}
+
+.btn-light{
+
+    background:transparent;
+
+    border:none;
+
+}
+
+/* ===========================
+   INPUT
+=========================== */
+
+input,
+textarea,
+select{
+
+    border-radius:10px !important;
+
+    border:1px solid var(--border) !important;
+
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+
+    border-color:var(--terracotta) !important;
+
+    box-shadow:0 0 0 4px rgba(164,117,81,.15) !important;
+
+}
+
+/* ===========================
+   PROFILE
+=========================== */
+
+.avatar-circle{
+
+    border:4px solid var(--cream);
+
+    box-shadow:0 6px 20px rgba(0,0,0,.15);
+
+}
+
+.upload-card{
+
+    background:#fff;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.upload-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.footer{
+
+    background:var(--cream);
+
+    color:var(--charcoal);
+
+    border-top:1px solid var(--border);
+
+    padding:20px;
+
+    margin-top:50px;
+
+    text-align:center;
+
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:var(--cream);
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--terracotta);
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:var(--charcoal);
+}
+
+/* ===========================================
+   KHUSUS HALAMAN UPLOAD
+   (boleh juga ditempel di style-upload.css)
+=========================================== */
+
+.upload-page{
+    background:var(--bg);
+}
+
+.dropzone-box{
+    background:#F8F5F1;
+    border:2px dashed var(--terracotta);
+    border-radius:18px;
+}
+
+.dropzone-box:hover{
+    background:#EFE6DE;
+}
+
+.btn-pilih,
+.btn-unggah{
+
+    background:var(--terracotta);
+
+    color:#fff;
+
+    border:none;
+
+    border-radius:30px;
+
+}
+
+.btn-pilih:hover,
+.btn-unggah:hover{
+
+    background:var(--charcoal);
+
+}
+
+.btn-batalkan{
+
+    background:#fff;
+
+    border:1px solid var(--terracotta);
+
+    color:var(--terracotta);
+
+    border-radius:30px;
+
+}
+
+.btn-batalkan:hover{
+
+    background:var(--terracotta);
+
+    color:#fff;
+
+}
+/* =========================================
+   LOGIN & REGISTER MODAL
+========================================= */
+
+.modal-content,
+.modal-box{
+
+    background:var(--cream);
+
+    border:none;
+
+    border-radius:20px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.18);
+
+    overflow:hidden;
+
+}
+
+.modal-header{
+
+    background:transparent;
+
+    border-bottom:1px solid var(--border);
+
+    padding:20px 25px;
+
+}
+
+.modal-title,
+.modal-brand{
+
+    color:var(--charcoal);
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+}
+
+.modal-body{
+
+    padding:25px;
+
+}
+
+.modal-footer{
+
+    border-top:1px solid var(--border);
+
+    background:transparent;
+
+}
+
+/* Overlay */
+
+.modal-backdrop.show,
+.modal-overlay{
+
+    background:rgba(42,42,42,.55);
+
+    backdrop-filter:blur(6px);
+
+}
+
+/* Close Button */
+
+.btn-close,
+.modal-close{
+
+    transition:.3s;
+
+    opacity:.8;
+
+}
+
+.btn-close:hover,
+.modal-close:hover{
+
+    transform:rotate(90deg);
+
+    opacity:1;
+
+}
+
+/* Login/Register Tabs */
+
+.modal-tabs{
+
+    display:flex;
+
+    gap:10px;
+
+    border-bottom:none;
+
+    margin-bottom:20px;
+
+}
+
+.modal-tab{
+
+    flex:1;
+
+    padding:10px;
+
+    border-radius:30px;
+
+    background:#fff;
+
+    color:var(--charcoal);
+
+    transition:.3s;
+
+    font-weight:600;
+
+}
+
+.modal-tab.active{
+
+    background:var(--terracotta);
+
+    color:#fff;
+
+}
+
+.modal-tab:hover{
+
+    background:var(--terracotta);
+
+    color:#fff;
+
+}
+
+/* Label */
+
+.modal-form-inner label,
+.form-group label{
+
+    color:var(--charcoal);
+
+    font-weight:600;
+
+    margin-bottom:5px;
+
+}
+
+/* Input */
+
+.modal-form-inner input,
+.modal-form-inner textarea{
+
+    width:100%;
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    padding:12px 15px;
+
+    transition:.3s;
+
+}
+
+.modal-form-inner input:focus,
+.modal-form-inner textarea:focus{
+
+    border-color:var(--terracotta);
+
+    box-shadow:0 0 0 4px rgba(164,117,81,.15);
+
+    outline:none;
+
+}
+
+/* Link */
+
+.modal-form-inner a{
+
+    color:var(--terracotta);
+
+    font-weight:600;
+
+}
+
+.modal-form-inner a:hover{
+
+    color:var(--charcoal);
+
+}
+
+/* Button Login */
+
+.modal-body .btn,
+.modal-body button,
+.modal-form-inner button{
+
+    width:100%;
+
+    margin-top:10px;
+
+    background:var(--terracotta);
+
+    color:#fff;
+
+    border:none;
+
+    border-radius:30px;
+
+    padding:12px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.modal-body .btn:hover,
+.modal-body button:hover,
+.modal-form-inner button:hover{
+
+    background:var(--charcoal);
+
+}
+
+/* Login Illustration */
+
+.modal-body img{
+
+    border-radius:15px;
+
+}
+
+/* Divider */
+
+.modal hr{
+
+    border-color:var(--border);
+
+}
+
+/* Smooth Animation */
+
+.modal.fade .modal-dialog{
+
+    transform:translateY(30px);
+
+    transition:.35s;
+
+}
+
+.modal.show .modal-dialog{
+
+    transform:translateY(0);
+
+}

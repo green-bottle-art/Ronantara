@@ -1,0 +1,576 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --radius: 6px;
+  --speed: 0.2s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: sans-serif;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  font-family: sans-serif;
+}
+
+/* ============================
+   HEADER
+   ============================ */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+/* ============================
+   BRAND
+   ============================ */
+
+.judul {
+  display: none;
+  /* disembunyikan, brand dipindah ke navbar */
+}
+
+/* ============================
+   NAVBAR
+   ============================ */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 32px;
+  height: 56px;
+  border-bottom: 1px solid #ccc;
+  background: transparent !important;
+}
+
+/* Brand RONANTARA di dalam navbar */
+.navbar::before {
+  content: 'RONANTARA';
+  font-size: 1.3rem;
+  font-weight: bold;
+  white-space: nowrap;
+  margin-right: 8px;
+}
+
+.col {
+  flex: 1;
+}
+
+.nav-links {
+  display: flex;
+  gap: 4px;
+}
+
+.nav-links a {
+  font-size: 0.9rem;
+  padding: 5px 14px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  border-color: #999;
+  background: #eee;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-bar {
+  height: 32px;
+  width: 200px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  padding: 0 12px;
+  font-size: 0.875rem;
+  outline: none;
+}
+
+/* Sembunyikan tombol <button> duplikat */
+button.btn-avatar {
+  display: none;
+}
+
+a.btn-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+a.btn-avatar::before {
+  content: '👤';
+}
+
+.clear-float {
+  clear: both;
+}
+
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  padding: 4px;
+  color: #333;
+
+}
+
+.avatar-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.avatar-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-nav {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+}
+
+
+/* ============================
+   CATEGORY BAR
+   ============================ */
+
+.category-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 32px;
+  border-bottom: 1px solid #ccc;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+
+.cat-btn {
+  white-space: nowrap;
+  padding: 4px 14px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  border: 1px solid #999;
+  background: transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+.cat-btn:hover {
+  background: #ddd;
+}
+
+
+
+/* ============================
+   GALLERY
+   ============================ */
+
+.gallery-section {
+  padding: 24px 32px;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #ccc;
+  display: inline-block;
+}
+
+.gallery-grid {
+  columns: 5 170px;
+  gap: 12px;
+}
+
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #fff;
+  cursor: pointer;
+}
+
+.gallery-item:hover {
+  outline: 2px solid #999;
+}
+
+.gallery-thumb img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.galery-info {
+  padding: 8px 10px 10px;
+}
+
+.galery-info h3 {
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.galery-info p {
+  font-size: 0.78rem;
+  color: #555;
+}
+
+.gallery-actions {
+  display: flex;
+  gap: 16;
+  padding: 8px 10px;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+/* ============================
+   MODAL — CSS :target
+   ============================ */
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 300;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay:target {
+  display: flex;
+}
+
+.modal-box {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  padding: 32px 28px 28px;
+  width: 100%;
+  max-width: 340px;
+  position: relative;
+}
+
+.modal-brand,
+.mocal-brand {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.modal-close,
+.modal-clise {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.modal-close::before,
+.modal-clise::before {
+  content: '✕';
+}
+
+.modal-close:hover,
+.modal-clise:hover {
+  color: #000;
+}
+
+.modal-tabs {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 14px;
+}
+
+.modal-tab {
+  flex: 1;
+  text-align: center;
+  padding: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #555;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.modal-tab:hover {
+  color: #000;
+}
+
+.modal-tab.active {
+  color: #000;
+  border-bottom-color: #000;
+}
+
+.modal-title {
+  font-size: 0.95rem;
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+
+.modal-form-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 0.84rem;
+  color: #555;
+}
+
+.modal-form-inner a {
+  color: #000;
+  font-weight: 600;
+}
+
+/* ============================
+   FORM ELEMENTS
+   ============================ */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-group label {
+  font-size: 0.81rem;
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  border: 1px solid #999;
+  border-radius: var(--radius);
+  padding: 8px 12px;
+  font-size: 0.88rem;
+  font-family: sans-serif;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: #333;
+}
+
+/* ============================
+   TOMBOL
+   ============================ */
+
+.btn {
+  display: inline-block;
+  padding: 9px 20px;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: 1px solid #999;
+  background: #eee;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+.btn-primary:hover {
+  background: #000;
+}
+
+.uploads-section {
+  margin-top: 2rem;
+}
+
+.uploads-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+
+/* Card unggahan */
+.profil-name-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profil-edit-btn {
+  margin-left: auto;
+} 
+.upload-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.upload-card-thumb img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.upload-card-thumb p {
+  padding: 0.25rem 0.75rem;
+  margin: 0;
+}
+
+.upload-card-thumb p:last-child {
+  padding-bottom: 0.75rem;
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.bio-text {
+  max-width: 900px;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  min-height: 200px;
+  color: #333;
+}
+
+.footer {
+  text-align: center;
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+
+@media (max-width: 700px) {
+  .judul {
+    padding: 10px 16px 4px;
+  }
+
+  .navbar {
+    height: auto;
+    /* ⬅️ TAMBAH INI — biar tinggi navbar ngikutin isi, gak dipatok 56px */
+    padding: 10px 16px;
+    flex-wrap: wrap;
+
+  }
+
+  .hamburger-btn {
+    display: block;
+  }
+
+  .navbar::before {
+    order: 2;
+    flex: 1;
+    text-align: center;
+    margin: 0;
+  }
+
+  .col,
+  .nav-left {
+    display: contents;
+  }
+
+  #navLinks {
+    display: none;
+    order: 5;
+    flex-basis: 100%;
+    flex-direction: column;
+    gap: 4px;
+    padding-top: 10px;
+  }
+
+  #navLinks.nav-open {
+    display: flex;
+  }
+
+  .nav-right {
+    display: contents;
+  }
+
+  a.btn-light {
+    order: 3;
+    margin-left: auto;
+  }
+
+  .search-bar {
+    order: 4;
+    flex-basis: 100%;
+    width: 100%;
+    margin-top: 8px;
+  }
+
+
+
+  .search-bar {
+    width: auto;
+    flex: 1;
+  }
+
+  /* ⬅️ GANTI — dari width:130px jadi fleksibel isi ruang kosong */
+  .category-bar {
+    padding: 8px 16px;
+  }
+
+  .gallery-section {
+    padding: 16px;
+  }
+
+  .gallery-grid {
+    columns: 2;
+  }
+    .profil-name-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+}
+

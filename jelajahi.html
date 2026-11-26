@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Jelajahi - RONANTARA </title>
+
+    <link rel="stylesheet" type="text/css" href="asset/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="asset/css/style.css">
+    <link rel="stylesheet" type="text/css" href="asset/css/style-ronantara.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="judul">
+            <h1>
+                RONANTARA
+            </h1>
+        </div>
+        <!---menu-->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <button class="hamburger-btn" onclick="toggleMenu()" aria-label="Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                </svg>
+            </button>
+            <div class="col">
+                <div class="nav-left">
+
+                    <div class="nav-links" id="navLinks">
+                        <a href="index.html">Beranda</a>
+                        <a href="upload.html">Unggah</a>
+                        <a href="jelajahi.html" class="active">Jelajahi</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="nav-right">
+                    <input class="search-bar" type="search" placeholder="Cari" id="searchInput">
+                <a class="btn-light" href="profil.html" title="Profil Saya">
+                    <img src="https://i.pinimg.com/736x/ec/1b/1e/ec1b1e453ce29b300812a379e14f7a30.jpg"
+                        class="rounded-circle avatar-nav">
+
+                </a>
+            </div>
+
+            <div class="clear-float"></div>
+
+        </nav>
+    </div>
+
+    <!-- kategori -->
+    <div class="container mt-4">
+        <p class="fw-bold">Menampilkan semua karya</p>
+        <div class="">
+            <button class="cat-btn active" onclick="filterCategory(this, 'semua')">Semua</button>
+            <button class="cat-btn" onclick="filterCategory(this, 'digital')">Digital Art</button>
+            <button class="cat-btn" onclick="filterCategory(this, 'lukisan')">Lukisan</button>
+            <button class="cat-btn" onclick="filterCategory(this, 'grafis')">Desain Grafis</button>
+            <button class="cat-btn" onclick="filterCategory(this, 'fotografi')">Fotografi</button>
+        </div>
+    </div> 
+
+    
+    <!-- Galeri -->
+    <div class="container">
+        <div class="gallery-section">
+
+            <h2 class="section-title">Pencarian Teratas</h2>
+            <div class="gallery-grid" id="galleryGrid">
+
+                <div class="gallery-item" data-category="fotografi" data-tags="sym potret tilltheend fotografi">
+                    <!--Galeri Item-->
+                    <div class="gallery-thumb">
+                        <a href="detail-karya.html?id=1">
+                            <img src="https://i.pinimg.com/1200x/a1/6a/f8/a16af87b26507b556f1e0d958d93b274.jpg">
+                        </a>
+                    </div>
+                    <div class="galery-info">
+                        <h3>sym</h3>
+                        <p> Fotografi - TillTheEnd </p>
+                    </div>
+                    <div class="gallery-actions">
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Suka">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-heart" viewBox="0 0 16 16">
+                                <path
+                                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                            </svg>
+                            <span>10</span>
+                        </a>
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Komentar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-chat" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105" />
+                            </svg>
+                            <span>3</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="digital"
+                    data-tags="kim dokja sleepy-c digital art omniscient reader character">
+                    <!--Galeri Item-->
+                    <div class="gallery-thumb">
+                        <a href="detail-karya.html?id=2">
+                            <img src="https://i.pinimg.com/736x/27/f9/5e/27f95e1289ee96232b58f8b927eeab08.jpg">
+                        </a>
+                    </div>
+                    <div class="galery-info">
+                        <h3>Kim Dokja</h3>
+                        <p> Digital Art - Sleepy-C </p>
+                    </div>
+                    <div class="gallery-actions">
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Suka">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-heart" viewBox="0 0 16 16">
+                                <path
+                                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                            </svg>
+                            <span>12</span>
+                        </a>
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Komentar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-chat" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105" />
+                            </svg>
+                            <span>5</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="grafis" data-tags="martin coer branding logo desain grafis">
+                    <div class="gallery-thumb">
+                        <a href="detail-karya.html?id=3">
+                            <img src="https://i.pinimg.com/736x/98/b5/f4/98b5f4b6fdbe331578bbd3c245f06569.jpg">
+                        </a>
+                    </div>
+                    <div class="galery-info">
+                        <h3>Martin</h3>
+                        <p> Desain Grafis - Coer </p>
+                    </div>
+                    <div class="gallery-actions">
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Suka">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-heart" viewBox="0 0 16 16">
+                                <path
+                                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                            </svg>
+                            <span>11</span>
+                        </a>
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Komentar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-chat" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105" />
+                            </svg>
+                            <span>3</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="lukisan"
+                    data-tags="starry night van gogh lukisan malam langit klasik">
+                    <div class="gallery-thumb">
+                        <a href="detail-karya.html?id=4">
+                            <img src="https://i.pinimg.com/1200x/1d/b8/ec/1db8ec26d5da93337e5834e41b6e6bc2.jpg">
+                        </a>
+                    </div>
+                    <div class="galery-info">
+                        <h3>The Starry Night</h3>
+                        <p> Lukisan - Van Gogh </p>
+                    </div>
+                    <div class="gallery-actions">
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Suka">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-heart" viewBox="0 0 16 16">
+                                <path
+                                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                            </svg>
+                            <span>12</span>
+                        </a>
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Komentar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-chat" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105" />
+                            </svg>
+                            <span>3</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="digital" data-tags="bubbles go rani digital art ilustrasi">
+                    <div class="gallery-thumb">
+                        <a href="detail-karya.html?id=5">
+                            <img src="https://i.pinimg.com/736x/7a/02/b1/7a02b18c0ed3523e0460c0070d7891af.jpg">
+                        </a>
+                    </div>
+                    <div class="galery-info">
+                        <h3>Bubbles</h3>
+                        <p> Digital Art - Go Rani </p>
+                    </div>
+                    <div class="gallery-actions">
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Suka">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-heart" viewBox="0 0 16 16">
+                                <path
+                                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                            </svg>
+                            <span>10</span>
+                        </a>
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Komentar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-chat" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105" />
+                            </svg>
+                            <span>3</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="grafis" data-tags="poster design wael rachedi desain grafis">
+                    <div class="gallery-thumb">
+                        <a href="detail-karya.html?id=6">
+                            <img src="https://i.pinimg.com/736x/1b/86/96/1b8696f31a9a973719211deb138e7d00.jpg">
+                        </a>
+                    </div>
+                    <div class="galery-info">
+                        <h3>Poster design</h3>
+                        <p> Desain Grafis - WaelRachedi </p>
+                    </div>
+                    <div class="gallery-actions">
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Suka">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-heart" viewBox="0 0 16 16">
+                                <path
+                                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                            </svg>
+                            <span>4</span>
+                        </a>
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Komentar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-chat" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105" />
+                            </svg>
+                            <span>3</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="fotografi"
+                    data-tags="a smile fox gingitsune fotografi hewan rubah">
+                    <div class="gallery-thumb">
+                        <a href="detail-karya.html?id=7">
+                            <img src="https://i.pinimg.com/736x/60/a8/2d/60a82dc5eb962d030d209525477c0114.jpg">
+                        </a>
+                    </div>
+                    <div class="galery-info">
+                        <h3>A Smile Fox</h3>
+                        <p> Fotografi - Gingitsune </p>
+                    </div>
+                    <div class="gallery-actions">
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Suka">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-heart" viewBox="0 0 16 16">
+                                <path
+                                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                            </svg>
+                            <span>12</span>
+                        </a>
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Komentar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-chat" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105" />
+                            </svg>
+                            <span>3</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="lukisan" data-tags="the swing jean lukisan klasik taman">
+                    <div class="gallery-thumb">
+                        <a href="detail-karya.html?id=8">
+                            <img src="https://i.pinimg.com/736x/89/60/5b/89605bb7f2aa7beebebbdbf6cbc67001.jpg">
+                        </a>
+                    </div>
+                    <div class="galery-info">
+                        <h3>The Swing</h3>
+                        <p> Lukisan - Jean </p>
+                    </div>
+                    <div class="gallery-actions">
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Suka">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-heart" viewBox="0 0 16 16">
+                                <path
+                                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                            </svg>
+                            <span>12</span>
+                        </a>
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Komentar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-chat" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105" />
+                            </svg>
+                            <span>0</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="lukisan" data-tags="ophelia john millais lukisan klasik">
+                    <div class="gallery-thumb">
+                        <a href="detail-karya.html?id=9">
+                            <img src="https://i.pinimg.com/736x/ea/2c/09/ea2c09f461cbabaa68ae2e52d3802acb.jpg">
+                        </a>
+                    </div>
+                    <div class="galery-info">
+                        <h3>Ophelia</h3>
+                        <p> Lukisan - John_Millais </p>
+                    </div>
+                    <div class="gallery-actions">
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Suka">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-heart" viewBox="0 0 16 16">
+                                <path
+                                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                            </svg>
+                            <span>19</span>
+                        </a>
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Komentar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-chat" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105" />
+                            </svg>
+                            <span>1</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="fotografi"
+                    data-tags="malioboro yogyakarta mega p fotografi jalanan hujan">
+                    <div class="gallery-thumb">
+                        <a href="detail-karya.html?id=10">
+                            <img src="https://i.pinimg.com/736x/7f/d6/d6/7fd6d652c5bd5747466c854c187ba438.jpg">
+                        </a>
+                    </div>
+                    <div class="galery-info">
+                        <h3>Malioboro After Rain</h3>
+                        <p> Fotografi - Mega_P </p>
+                    </div>
+                    <div class="gallery-actions">
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Suka">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-heart" viewBox="0 0 16 16">
+                                <path
+                                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                            </svg>
+                            <span>10</span>
+                        </a>
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Komentar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-chat" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105" />
+                            </svg>
+                            <span>3</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="grafis" data-tags="tokyo poster dave b desain grafis travel">
+                    <div class="gallery-thumb">
+                        <a href="detail-karya.html?id=11">
+                            <img src="https://i.pinimg.com/736x/ce/94/cb/ce94cbbf418f4cd0eac7d785a56c4de8.jpg">
+                        </a>
+                    </div>
+                    <div class="galery-info">
+                        <h3>Tokyo Poster</h3>
+                        <p> Desain Grafis - Dave_B </p>
+                    </div>
+                    <div class="gallery-actions">
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Suka">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-heart" viewBox="0 0 16 16">
+                                <path
+                                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                            </svg>
+                            <span>15</span>
+                        </a>
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Komentar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-chat" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105" />
+                            </svg>
+                            <span>6</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="digital" data-tags="hikaru yoshiki digital art character">
+                    <div class="gallery-thumb">
+                        <a href="detail-karya.html?id=12">
+                            <img src="https://i.pinimg.com/736x/b1/c2/74/b1c274925a2ec7b5c41b45cd11955307.jpg">
+                        </a>
+                    </div>
+                    <div class="galery-info">
+                        <h3>Hikaru</h3>
+                        <p> Digital Art - Yoshiki </p>
+                    </div>
+                    <div class="gallery-actions">
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Suka">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-heart" viewBox="0 0 16 16">
+                                <path
+                                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                            </svg>
+                            <span>10</span>
+                        </a>
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Komentar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-chat" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105" />
+                            </svg>
+                            <span>4</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="grafis" data-tags="goals yoshiki desain grafis">
+                    <div class="gallery-thumb">
+                        <a href="detail-karya.html?id=13">
+                            <img src="https://i.pinimg.com/736x/e4/3b/9e/e43b9e1d7841972e578b6d84fc037ebc.jpg">
+                        </a>
+                    </div>
+                    <div class="galery-info">
+                        <h3>Goals</h3>
+                        <p> Desain Grafis - Yoshiki </p>
+                    </div>
+                    <div class="gallery-actions">
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Suka">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-heart" viewBox="0 0 16 16">
+                                <path
+                                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                            </svg>
+                            <span>19</span>
+                        </a>
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Komentar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-chat" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105" />
+                            </svg>
+                            <span>4</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="digital"
+                    data-tags="young lord neptune_hi digital art character">
+                    <div class="gallery-thumb">
+                        <a href="detail-karya.html?id=14">
+                            <img src="https://i.pinimg.com/736x/88/3c/2c/883c2c6a62332c8d1542abe0709c1979.jpg">
+                        </a>
+                    </div>
+                    <div class="galery-info">
+                        <h3>Young Lord</h3>
+                        <p> Digital Art - neptune_hi </p>
+                    </div>
+                    <div class="gallery-actions">
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Suka">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-heart" viewBox="0 0 16 16">
+                                <path
+                                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                            </svg>
+                            <span>15</span>
+                        </a>
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Komentar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-chat" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105" />
+                            </svg>
+                            <span>9</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="grafis"
+                    data-tags="immersive ocean martin studio desain grafis laut">
+                    <div class="gallery-thumb">
+                        <a href="detail-karya.html?id=15">
+                            <img src="https://i.pinimg.com/736x/c3/92/48/c39248df98a17a2b55eb8a0c927c1f7a.jpg">
+                        </a>
+                    </div>
+                    <div class="galery-info">
+                        <h3>Immersive Ocean</h3>
+                        <p> Desain Grafis - Martin Studio </p>
+                    </div>
+                    <div class="gallery-actions">
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Suka">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-heart" viewBox="0 0 16 16">
+                                <path
+                                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                            </svg>
+                            <span>10</span>
+                        </a>
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Komentar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-chat" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105" />
+                            </svg>
+                            <span>4</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="digital" data-tags="would i be free armin digital art">
+                    <div class="gallery-thumb">
+                        <a href="detail-karya.html?id=16">
+                            <img src="https://i.pinimg.com/736x/cc/8e/7f/cc8e7fb4dd8e0d58e6fd76569e21568f.jpg">
+                        </a>
+                    </div>
+                    <div class="galery-info">
+                        <h3>Would I be Free? </h3>
+                        <p> Digital Art - Armin </p>
+                    </div>
+                    <div class="gallery-actions">
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Suka">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-heart" viewBox="0 0 16 16">
+                                <path
+                                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                            </svg>
+                            <span>10</span>
+                        </a>
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Komentar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-chat" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105" />
+                            </svg>
+                            <span>4</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="fotografi"
+                    data-tags="alley cat gingitsune fotografi kucing jalanan">
+                    <div class="gallery-thumb">
+                        <a href="detail-karya.html?id=17">
+                            <img src="https://i.pinimg.com/736x/59/69/b7/5969b738e24c7bb106a9d683ca3c4f98.jpg">
+                        </a>
+                    </div>
+                    <div class="galery-info">
+                        <h3>Alley Cat</h3>
+                        <p> Fotografi - Gingitsune </p>
+                    </div>
+                    <div class="gallery-actions">
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Suka">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-heart" viewBox="0 0 16 16">
+                                <path
+                                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                            </svg>
+                            <span>10</span>
+                        </a>
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Komentar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-chat" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105" />
+                            </svg>
+                            <span>4</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="fotografi" data-tags="light gingitsune fotografi cahaya">
+                    <div class="gallery-thumb">
+                        <a href="detail-karya.html?id=18">
+                            <img src="https://i.pinimg.com/736x/2e/cd/53/2ecd53decc640a924a326229cd8fcce4.jpg">
+                        </a>
+                    </div>
+                    <div class="galery-info">
+                        <h3>Light</h3>
+                        <p> Fotografi - Gingitsune </p>
+                    </div>
+                    <div class="gallery-actions">
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Suka">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-heart" viewBox="0 0 16 16">
+                                <path
+                                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                            </svg>
+                            <span>10</span>
+                        </a>
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Komentar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-chat" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105" />
+                            </svg>
+                            <span>2</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="digital" data-tags="europe woman nana digital art portrait">
+                    <div class="gallery-thumb">
+                        <a href="detail-karya.html?id=19">
+                            <img src="https://i.pinimg.com/736x/21/d9/8e/21d98ec002204d8225d95db45b1a84d0.jpg">
+                        </a>
+                    </div>
+                    <div class="galery-info">
+                        <h3>Europe Woman</h3>
+                        <p> Digital Art - Nana </p>
+                    </div>
+                    <div class="gallery-actions">
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Suka">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-heart" viewBox="0 0 16 16">
+                                <path
+                                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                            </svg>
+                            <span>10</span>
+                        </a>
+                        <a href="#" class="action-btn" data-bs-toggle="tooltip" data-bs-title="Komentar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-chat" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105" />
+                            </svg>
+                            <span>4</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="asset/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
+    <script>
+        // menyimpan status filter aktif
+        let currentCategory = 'semua';
+        let currentSearchQuery = '';
+
+        // Fungsi inti penyaringan (Kombinasi Kategori + Teks)
+        function applyFilters() {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            galleryItems.forEach(item => {
+                const itemCategory = item.getAttribute('data-category').toLowerCase();
+                const itemTags = item.getAttribute('data-tags').toLowerCase();
+
+                // Mengambil judul teks dan info kreator agar pencarian lebih luas
+                const itemTitle = item.querySelector('.galery-info h3').textContent.toLowerCase();
+                const itemInfo = item.querySelector('.galery-info p').textContent.toLowerCase();
+
+                // Evaluasi Kategori
+                const matchCategory = (currentCategory === 'semua' || itemCategory === currentCategory);
+
+                // Evaluasi Query Pencarian (mencari kecocokan di tags, judul, atau deskripsi)
+                const matchSearch = (
+                    itemTags.includes(currentSearchQuery) ||
+                    itemTitle.includes(currentSearchQuery) ||
+                    itemInfo.includes(currentSearchQuery)
+                );
+
+                // Tampilkan item hanya jika memenuhi kedua kriteria
+                if (matchCategory && matchSearch) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('nav-open')
+        }
+
+
+        // Handler klik tombol Kategori
+        function filterCategory(btn, category) {
+            // Atur status aktif pada tombol UI
+            document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Perbarui state kategori dan jalankan filter
+            currentCategory = category.toLowerCase();
+            applyFilters();
+        }
+
+        // Eksekusi Event Listener saat DOM Selesai Dimuat
+        document.addEventListener("DOMContentLoaded", () => {
+            const searchInput = document.getElementById("searchInput");
+            const searchButton = document.getElementById("searchButton");
+            const statusText = document.querySelector(".container.mt-4 p"); // Mengincar text "Menampilkan hasil pencarian dari..."
+
+            function performSearch() {
+                currentSearchQuery = searchInput.value.toLowerCase().trim();
+
+                // Mengubah info text pencarian secara dinamis di atas galeri
+                if (currentSearchQuery !== '') {
+                    statusText.innerHTML = `Menampilkan hasil pencarian dari "<span class="text-primary">${searchInput.value}</span>"`;
+                } else {
+                    statusText.innerHTML = `Menampilkan hasil karya`;
+                }
+
+                applyFilters();
+            }
+
+            // Live search (mencari langsung saat user mengetik)
+            if (searchInput) {
+                searchInput.addEventListener("input", performSearch);
+            }
+
+            // Pemicu alternatif saat tombol "Cari" diklik
+            if (searchButton) {
+                searchButton.addEventListener("click", performSearch);
+            }
+        });
+    </script>
+</body>
+
+</html>

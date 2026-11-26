@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Profil - RONANTARA </title>
+
+    <link rel="stylesheet" type="text/css" href="asset/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="asset/css/style.css">
+    <link rel="stylesheet" type="text/css" href="asset/css/style-ronantara.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="judul">
+            <h1>
+                RONANTARA
+            </h1>
+        </div>
+        <!---menu-->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <button class="hamburger-btn" onclick="toggleMenu()" aria-label="Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                </svg>
+            </button>
+            <div class="col">
+                <div class="nav-left">
+
+                    <div class="nav-links" id="navLinks">
+                        <a href="index.html">Beranda</a>
+                        <a href="upload.html">Unggah</a>
+                        <a href="jelajahi.html">Jelajahi</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="nav-right">
+                <input type="text" class="search-bar" placeholder="Cari" onclick="window.location.href='jelajahi.html'" readonly style="cursor:pointer">
+                <a class="btn-light" href="profil.html" title="Profil Saya">
+                    <img src="https://i.pinimg.com/736x/ec/1b/1e/ec1b1e453ce29b300812a379e14f7a30.jpg"
+                        class="rounded-circle avatar-nav">
+
+                </a>
+            </div>
+
+            <div class="clear-float"></div>
+        </nav>
+    </div>
+    <div class="container mt-4">
+        <div class="d-flex align-items-center gap-3">
+            <img src="https://i.pinimg.com/736x/ad/cb/ed/adcbed4eca9b815328f3585d547c5d76.jpg"
+                class="rounded-circle avatar-circle">
+            <div class="profil-name-wrap">
+                <h2 class="fw-bold">TillTheEnd</h2>
+            <span class="badge-seniman">Seniman</span>
+            </div>
+            <a href="edit-profil.html" class="btn btn-outline ms-auto">Edit Profil</a>
+        </div>
+        <div class="mt-4">
+            <h5 class="fw-bold">Bio</h5>
+            <p class="bio-text">Not your universe</p>
+        </div>
+        <div class="uploads-section">
+            <h5 class="fw-bold">Unggahan</h5>
+            <div class="row row-cols-2 row-cols-md-4 g-3 mt-1">
+                <div class="col-6 col-md-3">
+                    <div class="upload-card">
+                        <div class="upload-card-thumb">
+                            <a href="detail-karya.html?id=1">
+                            <img src="https://i.pinimg.com/1200x/a1/6a/f8/a16af87b26507b556f1e0d958d93b274.jpg">
+                            </a>
+                            <p class="mb-0 fw-bold">sym</p>
+                            <p class="mb-0 text-muted-small">simetris</p>
+                            <p class="mb-0 text-muted-small">Fotografi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>©2026 Ronantara by Kokok Mania</p>
+    </footer>
+<script>
+    function toggleMenu() {
+        document.getElementById('navLinks').classList.toggle('nav-open')
+    }
+</script>
+</body>
+
+</html>

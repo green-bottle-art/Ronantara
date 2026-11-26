@@ -1,0 +1,158 @@
+.upload-page {
+    padding: 32px 40px;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.upload-page h2 {
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 18px;
+}
+
+.dropzone-box {
+    background: #e0e0e0;
+    border-radius: 4px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+    margin-bottom: 24px;
+}
+
+.dropzone-box:hover {
+    background: #d4d4d4;
+}
+
+.dropzone-box p {
+    font-size: 0.88rem;
+    color: #444;
+    margin: 0;
+}
+
+.btn-pilih {
+    background: #3d3535;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 7px 22px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+
+.btn-pilih:hover {
+    background: #222;
+}
+
+.preview-wrap {
+    display: none;
+    margin-bottom: 24px;
+}
+
+.preview-wrap img {
+    max-width: 100%;
+    max-height: 280px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block;
+}
+
+.btn-hapus-preview {
+    margin-top: 8px;
+    font-size: 0.78rem;
+    border: 1px solid #ccc;
+    padding: 4px 10px;
+    border-radius: 4px;
+    background: #fff;
+    cursor: pointer;
+    color: #555;
+}
+
+.btn-hapus-preview:hover {
+    border-color: #999;
+    color: #222;
+}
+
+/* form fields */
+.field-group {
+    margin-bottom: 16px;
+}
+
+.field-group label {
+    display: block;
+    font-size: 0.84rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #222;
+}
+
+.field-group input[type="text"],
+.field-group textarea,
+.field-group select {
+    width: 100%;
+    border: 1px solid #999;
+    border-radius: 4px;
+    padding: 9px 12px;
+    font-size: 0.88rem;
+    font-family: sans-serif;
+    color: #333;
+    background: #fff;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.field-group input[type="text"]:focus,
+.field-group textarea:focus,
+.field-group select:focus {
+    border-color: #444;
+}
+
+.field-group textarea {
+    resize: vertical;
+    min-height: 96px;
+}
+
+.upload-btn-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-batalkan {
+    padding: 8px 20px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    border: 1px solid #999;
+    border-radius: 4px;
+    background: #fff;
+    color: #333;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+
+.btn-batalkan:hover {
+    background: #eee;
+}
+
+.btn-unggah {
+    padding: 8px 22px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background: #fff;
+    color: #333;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+
+.btn-unggah:hover {
+    background: #333;
+    color: #fff;
+}

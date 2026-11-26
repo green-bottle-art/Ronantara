@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Detail Karya - RONANTARA </title>
+
+    <link rel="stylesheet" type="text/css" href="asset/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="asset/css/style.css">
+    <link rel="stylesheet" type="text/css" href="asset/css/style-ronantara.css">
+    <link rel="stylesheet" type="text/css" href="asset/css/style-detail-karya.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="judul">
+            <h1>
+                RONANTARA
+            </h1>
+        </div>
+        <!---menu-->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <button class="hamburger-btn" onclick="toggleMenu()" aria-label="Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                </svg>
+            </button>
+            <div class="col">
+                <div class="nav-left">
+
+                    <div class="nav-links" id="navLinks">
+                        <a href="index.html">Beranda</a>
+                        <a href="upload.html">Unggah</a>
+                        <a href="jelajahi.html">Jelajahi</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="nav-right">
+                <input type="text" class="search-bar" placeholder="Cari" />
+                <a class="btn-light" href="profil.html" title="Profil Saya">
+                    <img src="https://i.pinimg.com/736x/ec/1b/1e/ec1b1e453ce29b300812a379e14f7a30.jpg"
+                        class="rounded-circle avatar-nav">
+                </a>
+            </div>
+
+            <div class="clear-float"></div>
+        </nav>
+    </div>
+
+    <div class="container mt-4">
+
+        <!-- Judul halaman -->
+        <div class="detail-top">
+            <a href="#" class="detail-back" title="Kembali" onclick="history.back(); return false;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                    class="bi bi-arrow-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
+                </svg>
+            </a>
+            <h2>Detail Karya</h2>
+        </div>
+
+        <div class="detail-wrap">
+
+            <!-- Kolom Gambar -->
+            <div class="detail-col-gambar">
+                <div class="detail-gambar">
+                    <img src="" id="detailGambar">
+                </div>
+            </div>
+
+            <!-- Kolom Info Karya -->
+            <div class="detail-col-info">
+                <span class="detail-kategori" id="detailKategori"></span>
+                <h1 class="detail-judul" id="detailJudul"></h1>
+
+                <div class="detail-pembuat">
+                    <a href="#" id="linkPembuat">
+                        <img id="detailAvatarPembuat" class="rounded-circle avatar-circle">
+                    </a>
+                    <a href="#" class="nama" id="linkPembuatNama">
+                        <span id="detailNamaPembuat"></span>
+                    </a>
+                    <button type="button" class="btn-follow" id="btnFollow" onclick="toggleFollow(this)">Ikuti</button>
+                </div>
+
+                <p class="detail-deskripsi" id="detailDeskripsi"></p>
+
+                <button type="button" class="btn-apresiasi" id="btnSuka" onclick="toggleSuka(this)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                        class="bi bi-heart" viewBox="0 0 16 16">
+                        <path
+                            d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                    </svg>
+                    <span id="labelSuka">Apresiasi</span> (<span id="jumlahSuka">0</span>)
+                </button>
+            </div>
+
+            <!-- Kolom Komentar -->
+            <div class="detail-col-komentar">
+                <div class="komentar-header" id="komentarHeader">Komentar (0)</div>
+
+                <div class="komentar-list" id="daftarKomentar"></div>
+
+                <div class="komentar-input-wrap">
+                    <form onsubmit="tambahKomentar(event)">
+                        <input type="text" id="inputKomentar" placeholder="Tambah komentar . . .">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+        <footer class="footer">
+            <p>©2026 Ronantara by Kokok Mania</p>
+        </footer>
+
+        <script type="text/javascript" src="asset/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+    function toggleMenu() {
+        document.getElementById('navLinks').classList.toggle('nav-open')
+    }
+</script>
+        <script>
+            const karyaData = {
+                1: { judul: "sym", kategori: "Fotografi", pembuat: "TillTheEnd",
+                    avatarPembuat: "https://i.pinimg.com/736x/ec/1b/1e/ec1b1e453ce29b300812a379e14f7a30.jpg",
+                    gambar: "https://i.pinimg.com/1200x/a1/6a/f8/a16af87b26507b556f1e0d958d93b274.jpg",
+                    deskripsi: "Komposisi simetris yang menangkap keseimbangan antara bentuk dan ruang. Setiap sudut sengaja disusun rapi untuk menghadirkan ketenangan visual.",
+                    suka: 10,
+                    komentar: [
+                        { avatar: "https://i.pinimg.com/1200x/9a/29/bd/9a29bd5c341c193cfd1248cd78db4c70.jpg", teks: "Komposisinya rapi banget, enak diliat" },
+                        { avatar: "https://i.pinimg.com/736x/fa/f8/d9/faf8d9c3bef649426220b27b0195f569.jpg", teks: "Vibes minimalis gini emang paling nendang" }
+                    ]},
+                2: { judul: "Kim Dokja", kategori: "Digital Art", pembuat: "Sleepy-C",
+                    avatarPembuat: "https://i.pinimg.com/736x/09/57/4b/09574b564d1f0fbf561c6ae2b754d384.jpg",
+                    gambar: "https://i.pinimg.com/736x/27/f9/5e/27f95e1289ee96232b58f8b927eeab08.jpg",
+                    deskripsi: "Potret karakter dengan detail ekspresi yang tajam, dipadukan pencahayaan dramatis khas gaya webtoon. Menghidupkan sosok yang penuh determinasi.",
+                    suka: 12,
+                    komentar: [
+                        { avatar: "https://i.pinimg.com/1200x/43/ab/f9/43abf9c8dd3077812b0cf26afb03411e.jpg", teks: "Ekspresinya dapet banget anjir" },
+                        { avatar: "https://i.pinimg.com/736x/f2/29/88/f229887bd05975beb6dc9761a528129c.jpg", teks: "Detail bajunya niat banget ini" }
+                    ]},
+                3: { judul: "Martin", kategori: "Desain Grafis", pembuat: "Coer",
+                    avatarPembuat: "https://i.pinimg.com/736x/46/90/fd/4690fd206e71bb9446ca82508f69f8a3.jpg",
+                    gambar: "https://i.pinimg.com/736x/98/b5/f4/98b5f4b6fdbe331578bbd3c245f06569.jpg",
+                    deskripsi: "Eksplorasi tipografi dan warna yang berani, memadukan elemen modern dengan sentuhan personal sang desainer.",
+                    suka: 11,
+                    komentar: [
+                        { avatar: "https://i.pinimg.com/736x/41/98/cd/4198cdee2624fedffba41f5df5674f05.jpg", teks: "Warnanya berani tapi tetep harmonis" },
+                        { avatar: "https://i.pinimg.com/736x/b6/a6/a5/b6a6a5e5a6759aecb9e16197ad13af75.jpg", teks: "Tipografinya keren, jarang liat yang kayak gini" }
+                    ]},
+                4: { judul: "The Starry Night", kategori: "Lukisan", pembuat: "Van Gogh",
+                    avatarPembuat: "https://i.pinimg.com/736x/da/dd/df/dadddf7d2539b366330f661747bd97f2.jpg",
+                    gambar: "https://i.pinimg.com/1200x/1d/b8/ec/1db8ec26d5da93337e5834e41b6e6bc2.jpg",
+                    deskripsi: "Langit malam yang bergolak dengan pusaran awan dan bintang, menaungi desa kecil yang tenang di bawahnya — kontras antara kekacauan alam semesta dan ketenangan kehidupan manusia.",
+                    suka: 12,
+                    komentar: [
+                        { avatar: "https://i.pinimg.com/1200x/9a/29/bd/9a29bd5c341c193cfd1248cd78db4c70.jpg", teks: "Wow tone birunya bikin adem tapi tetep dramatis ya. Suka banget sama pusaran awannya, kayak beneran gerak gitu liatnya. Desa kecil di bawah malah jadi kerasa tenang banget kontras sama langitnya yang chaos" },
+                        { avatar: "https://i.pinimg.com/736x/fa/f8/d9/faf8d9c3bef649426220b27b0195f569.jpg", teks: "Ih ini bagus bangettt warna birunya soft tapi tetep eye-catching gitu, apalagi pusaran-pusarannya kayak lukisan mimpi. Pengen banget liat aslinya deh~" },
+                        { avatar: "https://i.pinimg.com/1200x/43/ab/f9/43abf9c8dd3077812b0cf26afb03411e.jpg", teks: "gilaa tone birunya sat set banget dah, pusarannya kek abis diputer blender tapi tetep aesthetic parah, gaskeun lah" },
+                        { avatar: "https://i.pinimg.com/736x/f2/29/88/f229887bd05975beb6dc9761a528129c.jpg", teks: "Komposisinya solid. Kontras antara langit yang penuh gerak sama desa yang diem itu yang bikin lukisan ini nempel di kepala. Timeless emang." },
+                        { avatar: "https://i.pinimg.com/736x/41/98/cd/4198cdee2624fedffba41f5df5674f05.jpg", teks: "Karya yang begitu memesona. Ada keindahan yang tenang dalam kekacauan langitnya, seperti melihat mimpi yang dilukis dengan penuh perasaan." },
+                        { avatar: "https://i.pinimg.com/736x/b6/a6/a5/b6a6a5e5a6759aecb9e16197ad13af75.jpg", teks: "inii tuh ya vibes-nya kayak scene di anime pas karakternya lagi mikirin masa lalu terus background-nya jadi surreal gitu, gak?" },
+                        { avatar: "https://i.pinimg.com/1200x/f8/1e/c9/f81ec93e7799c320dac416fafe61c2cf.jpg", teks: "waaa gemesin banget sih ini langitnya berputar-putar kayak boba di gelas, pengen jadiin wallpaper deh!" }
+                    ]},
+                5: { judul: "Bubbles", kategori: "Digital Art", pembuat: "Go Rani",
+                    avatarPembuat: "https://i.pinimg.com/1200x/43/ab/f9/43abf9c8dd3077812b0cf26afb03411e.jpg",
+                    gambar: "https://i.pinimg.com/736x/7a/02/b1/7a02b18c0ed3523e0460c0070d7891af.jpg",
+                    deskripsi: "Permainan warna pastel dan tekstur gelembung yang lembut, menghadirkan suasana playful sekaligus menenangkan.",
+                    suka: 10,
+                    komentar: [
+                        { avatar: "https://i.pinimg.com/736x/f2/29/88/f229887bd05975beb6dc9761a528129c.jpg", teks: "Gemesin banget warnanya" },
+                        { avatar: "https://i.pinimg.com/736x/41/98/cd/4198cdee2624fedffba41f5df5674f05.jpg", teks: "Pengen dijadiin wallpaper hp" }
+                    ]},
+                6: { judul: "Poster design", kategori: "Desain Grafis", pembuat: "WaelRachedi",
+                    avatarPembuat: "https://i.pinimg.com/736x/f2/29/88/f229887bd05975beb6dc9761a528129c.jpg",
+                    gambar: "https://i.pinimg.com/736x/1b/86/96/1b8696f31a9a973719211deb138e7d00.jpg",
+                    deskripsi: "Desain poster dengan layout tegas dan hierarki visual yang kuat, dibuat untuk menarik perhatian dalam sekali pandang.",
+                    suka: 4,
+                    komentar: [
+                        { avatar: "https://i.pinimg.com/736x/b6/a6/a5/b6a6a5e5a6759aecb9e16197ad13af75.jpg", teks: "Layoutnya clean banget, langsung nangkep pesannya" },
+                        { avatar: "https://i.pinimg.com/1200x/f8/1e/c9/f81ec93e7799c320dac416fafe61c2cf.jpg", teks: "Kontrasnya pas, enak dibaca" }
+                    ]},
+                7: { judul: "A Smile Fox", kategori: "Fotografi", pembuat: "Gingitsune",
+                    avatarPembuat: "https://i.pinimg.com/736x/41/98/cd/4198cdee2624fedffba41f5df5674f05.jpg",
+                    gambar: "https://i.pinimg.com/736x/60/a8/2d/60a82dc5eb962d030d209525477c0114.jpg",
+                    deskripsi: "Momen candid seekor rubah yang seolah tersenyum ke kamera, tertangkap dalam pencahayaan alami yang hangat.",
+                    suka: 12,
+                    komentar: [
+                        { avatar: "https://i.pinimg.com/736x/b6/a6/a5/b6a6a5e5a6759aecb9e16197ad13af75.jpg", teks: "Ini rubah beneran senyum apa gimana wkwk lucu" },
+                        { avatar: "https://i.pinimg.com/1200x/f8/1e/c9/f81ec93e7799c320dac416fafe61c2cf.jpg", teks: "Momennya dapet banget, timing bagus" }
+                    ]},
+                8: { judul: "The Swing", kategori: "Lukisan", pembuat: "Jean",
+                    avatarPembuat: "https://i.pinimg.com/736x/b6/a6/a5/b6a6a5e5a6759aecb9e16197ad13af75.jpg",
+                    gambar: "https://i.pinimg.com/736x/89/60/5b/89605bb7f2aa7beebebbdbf6cbc67001.jpg",
+                    deskripsi: "Karya bergaya Rococo yang menghadirkan keceriaan dan kemewahan lewat sapuan warna cerah serta komposisi dinamis.",
+                    suka: 12,
+                    komentar: []},
+                9: { judul: "Ophelia", kategori: "Lukisan", pembuat: "John_Millais",
+                    avatarPembuat: "https://i.pinimg.com/1200x/f8/1e/c9/f81ec93e7799c320dac416fafe61c2cf.jpg",
+                    gambar: "https://i.pinimg.com/736x/ea/2c/09/ea2c09f461cbabaa68ae2e52d3802acb.jpg",
+                    deskripsi: "Interpretasi tragis yang dilukis dengan detail alam yang begitu hidup, menangkap keindahan dalam kesedihan yang mendalam.",
+                    suka: 19,
+                    komentar: [
+                        { avatar: "https://i.pinimg.com/736x/ad/cb/ed/adcbed4eca9b815328f3585d547c5d76.jpg", teks: "Detail bunganya gila, real banget" }
+                    ]},
+                10: { judul: "Malioboro After Rain", kategori: "Fotografi", pembuat: "Mega_P",
+                    avatarPembuat: "https://i.pinimg.com/736x/ad/cb/ed/adcbed4eca9b815328f3585d547c5d76.jpg",
+                    gambar: "https://i.pinimg.com/736x/7f/d6/d6/7fd6d652c5bd5747466c854c187ba438.jpg",
+                    deskripsi: "Suasana Malioboro selepas hujan, pantulan lampu kota di jalan basah menghadirkan nuansa syahdu khas Yogyakarta malam hari.",
+                    suka: 10,
+                    komentar: [
+                        { avatar: "https://i.pinimg.com/1200x/9a/29/bd/9a29bd5c341c193cfd1248cd78db4c70.jpg", teks: "Ini Jogja ya? Kangen banget liatnya" },
+                        { avatar: "https://i.pinimg.com/736x/fa/f8/d9/faf8d9c3bef649426220b27b0195f569.jpg", teks: "Pantulan lampunya cakep parah" }
+                    ]},
+                11: { judul: "Tokyo Poster", kategori: "Desain Grafis", pembuat: "Dave_B",
+                    avatarPembuat: "https://i.pinimg.com/736x/ec/1b/1e/ec1b1e453ce29b300812a379e14f7a30.jpg",
+                    gambar: "https://i.pinimg.com/736x/ce/94/cb/ce94cbbf418f4cd0eac7d785a56c4de8.jpg",
+                    deskripsi: "Desain retro terinspirasi arsitektur Tokyo Tower, memadukan tipografi vintage dengan palet warna hangat.",
+                    suka: 15,
+                    komentar: [
+                        { avatar: "https://i.pinimg.com/1200x/43/ab/f9/43abf9c8dd3077812b0cf26afb03411e.jpg", teks: "Nuansa vintage-nya kena banget" },
+                        { avatar: "https://i.pinimg.com/736x/f2/29/88/f229887bd05975beb6dc9761a528129c.jpg", teks: "Warna sama fontnya matching sih ini" }
+                    ]},
+                12: { judul: "Hikaru", kategori: "Digital Art", pembuat: "Yoshiki",
+                    avatarPembuat: "https://i.pinimg.com/1200x/9a/29/bd/9a29bd5c341c193cfd1248cd78db4c70.jpg",
+                    gambar: "https://i.pinimg.com/736x/b1/c2/74/b1c274925a2ec7b5c41b45cd11955307.jpg",
+                    deskripsi: "Potret digital dengan pencahayaan lembut yang menonjolkan tekstur kulit dan detail rambut secara halus.",
+                    suka: 10,
+                    komentar: [
+                        { avatar: "https://i.pinimg.com/736x/41/98/cd/4198cdee2624fedffba41f5df5674f05.jpg", teks: "Lighting-nya soft banget, enak diliat" }
+                    ]},
+                13: { judul: "Goals", kategori: "Desain Grafis", pembuat: "Yoshiki",
+                    avatarPembuat: "https://i.pinimg.com/1200x/9a/29/bd/9a29bd5c341c193cfd1248cd78db4c70.jpg",
+                    gambar: "https://i.pinimg.com/736x/e4/3b/9e/e43b9e1d7841972e578b6d84fc037ebc.jpg",
+                    deskripsi: "Poster motivasi dengan komposisi minimalis, dirancang untuk menyampaikan pesan ambisi lewat visual yang bersih.",
+                    suka: 19,
+                    komentar: [
+                        { avatar: "https://i.pinimg.com/736x/b6/a6/a5/b6a6a5e5a6759aecb9e16197ad13af75.jpg", teks: "Simple tapi ngena maknanya" },
+                        { avatar: "https://i.pinimg.com/1200x/f8/1e/c9/f81ec93e7799c320dac416fafe61c2cf.jpg", teks: "Poster kayak gini cocok buat mood board" }
+                    ]},
+                14: { judul: "Young Lord", kategori: "Digital Art", pembuat: "neptune_hi",
+                    avatarPembuat: "https://i.pinimg.com/736x/fa/f8/d9/faf8d9c3bef649426220b27b0195f569.jpg",
+                    gambar: "https://i.pinimg.com/736x/88/3c/2c/883c2c6a62332c8d1542abe0709c1979.jpg",
+                    deskripsi: "Ilustrasi karakter fantasi dengan detail kostum yang rumit, memancarkan aura kharismatik dan misterius.",
+                    suka: 15,
+                    komentar: [
+                        { avatar: "https://i.pinimg.com/736x/ad/cb/ed/adcbed4eca9b815328f3585d547c5d76.jpg", teks: "Kostumnya detail banget, effort banget ini" },
+                        { avatar: "https://i.pinimg.com/1200x/9a/29/bd/9a29bd5c341c193cfd1248cd78db4c70.jpg", teks: "Auranya kerasa kayak karakter penting di anime" }
+                    ]},
+                15: { judul: "Immersive Ocean", kategori: "Desain Grafis", pembuat: "Martin Studio",
+                    avatarPembuat: "https://i.pinimg.com/1200x/43/ab/f9/43abf9c8dd3077812b0cf26afb03411e.jpg",
+                    gambar: "https://i.pinimg.com/736x/c3/92/48/c39248df98a17a2b55eb8a0c927c1f7a.jpg",
+                    deskripsi: "Visual bertema laut dengan gradasi warna biru yang dalam, menciptakan kesan tenggelam dalam kedamaian samudra.",
+                    suka: 10,
+                    komentar: [
+                        { avatar: "https://i.pinimg.com/736x/f2/29/88/f229887bd05975beb6dc9761a528129c.jpg", teks: "Birunya bikin tenang liatnya" }
+                    ]},
+                16: { judul: "Would I be Free?", kategori: "Digital Art", pembuat: "Armin",
+                    avatarPembuat: "https://i.pinimg.com/736x/f2/29/88/f229887bd05975beb6dc9761a528129c.jpg",
+                    gambar: "https://i.pinimg.com/736x/cc/8e/7f/cc8e7fb4dd8e0d58e6fd76569e21568f.jpg",
+                    deskripsi: "Ilustrasi reflektif tentang kebebasan, dengan siluet dan gestur tangan yang penuh makna simbolis.",
+                    suka: 10,
+                    komentar: [
+                        { avatar: "https://i.pinimg.com/736x/41/98/cd/4198cdee2624fedffba41f5df5674f05.jpg", teks: "Maknanya dalem banget ini" },
+                        { avatar: "https://i.pinimg.com/736x/b6/a6/a5/b6a6a5e5a6759aecb9e16197ad13af75.jpg", teks: "Siluetnya simple tapi ceritanya kerasa" }
+                    ]},
+                17: { judul: "Alley Cat", kategori: "Fotografi", pembuat: "Gingitsune",
+                    avatarPembuat: "https://i.pinimg.com/736x/41/98/cd/4198cdee2624fedffba41f5df5674f05.jpg",
+                    gambar: "https://i.pinimg.com/736x/59/69/b7/5969b738e24c7bb106a9d683ca3c4f98.jpg",
+                    deskripsi: "Kucing liar yang tertangkap kamera di gang sempit, momen sederhana yang menghadirkan cerita tersendiri.",
+                    suka: 10,
+                    komentar: [
+                        { avatar: "https://i.pinimg.com/1200x/f8/1e/c9/f81ec93e7799c320dac416fafe61c2cf.jpg", teks: "Kucingnya ekspresif banget" }
+                    ]},
+                18: { judul: "Light", kategori: "Fotografi", pembuat: "Gingitsune",
+                    avatarPembuat: "https://i.pinimg.com/736x/41/98/cd/4198cdee2624fedffba41f5df5674f05.jpg",
+                    gambar: "https://i.pinimg.com/736x/2e/cd/53/2ecd53decc640a924a326229cd8fcce4.jpg",
+                    deskripsi: "Permainan cahaya dan bayangan yang menciptakan suasana dramatis dari objek sehari-hari.",
+                    suka: 10,
+                    komentar: [
+                        { avatar: "https://i.pinimg.com/736x/b6/a6/a5/b6a6a5e5a6759aecb9e16197ad13af75.jpg", teks: "Main cahayanya keren, dramatis banget" }
+                    ]},
+                19: { judul: "Europe Woman", kategori: "Digital Art", pembuat: "Nana",
+                    avatarPembuat: "https://i.pinimg.com/1200x/f8/1e/c9/f81ec93e7799c320dac416fafe61c2cf.jpg",
+                    gambar: "https://i.pinimg.com/736x/21/d9/8e/21d98ec002204d8225d95db45b1a84d0.jpg",
+                    deskripsi: "Potret digital bergaya klasik Eropa, memadukan detail busana era lampau dengan sentuhan warna modern.",
+                    suka: 10,
+                    komentar: [
+                        { avatar: "https://i.pinimg.com/1200x/9a/29/bd/9a29bd5c341c193cfd1248cd78db4c70.jpg", teks: "Detail busananya autentik banget" },
+                        { avatar: "https://i.pinimg.com/736x/fa/f8/d9/faf8d9c3bef649426220b27b0195f569.jpg", teks: "Perpaduan klasik modernnya smooth" }
+                    ]}
+            };
+
+            // ===== BACA ID DARI URL, TAMPILKAN DATANYA =====
+            const params = new URLSearchParams(window.location.search);
+            const idKarya = params.get('id') || '1';
+            const data = karyaData[idKarya] || karyaData['1'];
+
+            document.getElementById('detailGambar').src = data.gambar;
+            document.getElementById('detailKategori').textContent = data.kategori;
+            document.getElementById('detailJudul').textContent = data.judul;
+            document.getElementById('detailNamaPembuat').textContent = data.pembuat;
+            document.getElementById('detailAvatarPembuat').src = data.avatarPembuat;
+            document.getElementById('detailDeskripsi').textContent = data.deskripsi;
+            document.getElementById('jumlahSuka').textContent = data.suka;
+
+            // Arahkan avatar & nama pembuat ke halaman profil seniman yang sesuai
+            const urlProfilSeniman = `profil-seniman.html?nama=${encodeURIComponent(data.pembuat)}`;
+            document.getElementById('linkPembuat').href = urlProfilSeniman;
+            document.getElementById('linkPembuatNama').href = urlProfilSeniman;
+
+            const daftarKomentar = document.getElementById('daftarKomentar');
+            data.komentar.forEach(k => {
+                const item = document.createElement('div');
+                item.className = 'komentar-item';
+                item.innerHTML = `<img src="${k.avatar}" class="rounded-circle avatar-circle">
+                    <div class="komentar-bubble"></div>`;
+                item.querySelector('.komentar-bubble').textContent = k.teks;
+                daftarKomentar.appendChild(item);
+            });
+            document.getElementById('komentarHeader').textContent = `Komentar (${data.komentar.length})`;
+
+            // ===== FUNGSI-FUNGSI INTERAKSI (sama seperti sebelumnya) =====
+            function toggleSuka(btn) {
+                const jumlah = document.getElementById('jumlahSuka');
+                const label = document.getElementById('labelSuka');
+                let nilai = parseInt(jumlah.textContent, 10);
+
+                if (btn.classList.contains('liked')) {
+                    btn.classList.remove('liked');
+                    label.textContent = 'Apresiasi';
+                    nilai -= 1;
+                } else {
+                    btn.classList.add('liked');
+                    label.textContent = 'Diapresiasi';
+                    nilai += 1;
+                }
+                jumlah.textContent = nilai;
+            }
+
+            function toggleFollow(btn) {
+                if (btn.textContent.trim() === 'Ikuti') {
+                    btn.textContent = 'Mengikuti';
+                } else {
+                    btn.textContent = 'Ikuti';
+                }
+            }
+
+            function tambahKomentar(e) {
+                e.preventDefault();
+                const input = document.getElementById('inputKomentar');
+                const teks = input.value.trim();
+                if (teks === '') return;
+
+                const daftar = document.getElementById('daftarKomentar');
+                const item = document.createElement('div');
+                item.className = 'komentar-item';
+                item.innerHTML = `
+                <img src="https://i.pinimg.com/736x/ad/cb/ed/adcbed4eca9b815328f3585d547c5d76.jpg" class="rounded-circle avatar-circle">
+                <div class="komentar-bubble"></div>`;
+                item.querySelector('.komentar-bubble').textContent = teks;
+                daftar.appendChild(item);
+                daftar.scrollTop = daftar.scrollHeight;
+
+                const header = document.getElementById('komentarHeader');
+                const match = header.textContent.match(/\d+/);
+                const jumlahBaru = (match ? parseInt(match[0], 10) : 0) + 1;
+                header.textContent = `Komentar (${jumlahBaru})`;
+
+                input.value = '';
+            }
+        </script>
+</body>
+
+</html>

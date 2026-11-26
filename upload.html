@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Upload - RONANTARA </title>
+
+    <link rel="stylesheet" type="text/css" href="asset/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="asset/css/style.css">
+    <link rel="stylesheet" type="text/css" href="asset/css/style-upload.css">
+    <link rel="stylesheet" type="text/css" href="asset/css/style-ronantara.css">
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="judul">
+            <h1>
+                RONANTARA
+            </h1>
+        </div>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <button class="hamburger-btn" onclick="toggleMenu()" aria-label="Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                </svg>
+            </button>
+            <div class="col">
+                <div class="nav-left">
+
+                    <div class="nav-links" id="navLinks">
+                        <a href="index.html">Beranda</a>
+                        <a href="upload.html" class="active">Unggah</a>
+                        <a href="jelajahi.html">Jelajahi</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="nav-right">
+                <input type="text" class="search-bar" placeholder="Cari" onclick="window.location.href='jelajahi.html'"
+                    readonly style="cursor:pointer"> <a class="btn-light" href="profil.html" title="Profil Saya">
+                    <img src="https://i.pinimg.com/736x/ec/1b/1e/ec1b1e453ce29b300812a379e14f7a30.jpg"
+                        class="rounded-circle avatar-nav">
+
+                </a>
+            </div>
+            <div class="clear-float"></div>
+        </nav>
+    </div>
+    <div class="upload-page">
+        <h2>Unggah Karya</h2>
+
+        <div class="dropzone-box" id="dropzone" onclick="document.getElementById('file-input').click()">
+            <p>Unggah File</p>
+            <button class="btn-pilih" type="button">Pilih File</button>
+        </div>
+
+        <div class="preview-wrap" id="preview-wrap">
+            <img id="preview-img" src="" alt="Preview gambar">
+            <button class="btn-hapus-preview" type="button" onclick="hapusPreview()">✕ Hapus gambar</button>
+        </div>
+
+        <input type="file" id="file-input" hidden accept="image/*" onchange="previewGambar(event)">
+
+        <div class="field-group">
+            <label for="judul-karya">Judul karya</label>
+            <input type="text" id="judul-karya" name="judul" placeholder="Tulis judul karya">
+        </div>
+
+        <div class="field-group">
+            <label for="deskripsi-karya">Deskripsi</label>
+            <textarea id="deskripsi-karya" name="deskripsi" placeholder="Ceritakan tentang karya ini"></textarea>
+        </div>
+
+        <div class="field-group">
+            <label for="kategori-karya">Kategori</label>
+            <select id="kategori-karya" name="kategori">
+                <option value="" disabled selected>Masukkan kategori</option>
+                <option value="digital">Digital Art</option>
+                <option value="lukisan">Lukisan</option>
+                <option value="grafis">Desain Grafis</option>
+                <option value="fotografi">Fotografi</option>
+            </select>
+        </div>
+
+        <div class="upload-btn-row">
+            <button class="btn-batalkan" type="button"
+                onclick="if(confirm('Batal mengunggah?')) window.location.href='index.html'">Batalkan</button>
+            <button class="btn-unggah" type="button" onclick="unggahKarya()">Unggah</button>
+        </div>
+    </div>
+
+
+    <div class="clear-float"></div>
+    </nav>
+    </div>
+    <footer class="footer">
+        <p>©2026 Ronantara by Kokok Mania</p>
+    </footer>
+    <script>
+    function toggleMenu() {
+        document.getElementById('navLinks').classList.toggle('nav-open')
+    }
+</script>
+</body>
+
+</html>
